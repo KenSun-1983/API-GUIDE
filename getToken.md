@@ -30,12 +30,3 @@ object
 |user| |Yes|[string]| ||administrator|
 |value| |Yes|[string]| ||eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzU3Mzg4MDg4OTkxfQ.wr1TxAC_c8gRpgGMlCaDBgnYhnGlpsuS-0QGPn5jXIM|
 
-**Successful Example [Mock API]**:
-
-**mock api**: https://result.eolink.com/9EmwBTE13c32db84bc562749eb3d17b83e5c24f2a3e2bb3?uri=/api/v1/tokens&resultType=failure
-```
-{
-    "user": "administrator",
-    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzU3Mzg4MDg4OTkxfQ.wr1TxAC_c8gRpgGMlCaDBgnYhnGlpsuS-0QGPn5jXIM"
-}
-```
