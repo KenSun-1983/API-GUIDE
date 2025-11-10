@@ -2,6 +2,7 @@
 
 # LLDP
 ## API Information
+Obtain LLDP neighbor information. Through the data returned by this interface, you can acquire the peer device and port information connected to each port of the device.
 
 **Detailed Explanation**:
 
