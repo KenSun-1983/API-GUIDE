@@ -4,6 +4,6 @@ Welcome to our API documentation! This API provides a series of interfaces for d
 
 - [Overall Introduction](introduction.md)
 - [Token API](getToken.md)
-- [LLDP API](lldp.md)
+- [LLDP API](/EMS/lldp.md)
 
 Please click the links above for more information.
