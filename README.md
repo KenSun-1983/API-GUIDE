@@ -63,3 +63,10 @@ npm restart www
 - [LLDP API](/EMS/lldp.md)
 
 Please click the links above for more information.
+
+## Video Example
+
+
+
+https://github.com/user-attachments/assets/9dfdb205-fcf8-4ea1-ad12-a26cb1e82b40
+
