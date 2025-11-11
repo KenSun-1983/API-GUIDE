@@ -43,8 +43,10 @@ npm restart www
 
 1. **Authentication**
 
-   Authenticate yourself first to obtain an access token.
-   View getToken interface documentation.[getToken](getToken.md)
+   Authenticate yourself first to obtain an access token.View getToken interface documentation.[getToken](getToken.md)
+
+   **Note:** `The validity period of the token is 15 minutes by default. After expiration, the API will prompt a verification failure, and a new token will need to be requested.`
+   
 3. **Making Requests with Token**
    
    Send requests using appropriate HTTP methods.For all HTTP requests，Must add the token data obtained from [getToken](getToken.md) to the Authentication-Token in the HTTP header, for example:
