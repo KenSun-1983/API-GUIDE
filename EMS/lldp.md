@@ -21,6 +21,9 @@ In the current version, the string "tiap_ems_north" can be specified arbitrarily
             "/measure_sla_north":"127.0.0.1:61304"
         }
 ```
+*** How to get neId***
+
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/ea0d5dbb-c218-45b5-bd1c-e5626cc387f9" />
 
 **API Path**
 https://172.16.61.51/tiap_ems_north/tiap_ems_basic_mgt/v3/lldp_rem
