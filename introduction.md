@@ -40,11 +40,11 @@ npm restart www
 1. **Authentication**: Authenticate yourself first to obtain an access token.
    View getToken interface documentation.[getToken](getToken.md)
 2. **Making Requests with Token**: Send requests using appropriate HTTP methods.
-   Add the token data obtained from [getToken](getToken.md) to the Authentication-Token in the HTTP header, for example:
+   For all HTTP requests，Must add the token data obtained from [getToken](getToken.md) to the Authentication-Token in the HTTP header, for example:
    ```http
    GET /api/v1/resource HTTP/1.1
    Host: example.com
    Content-Type: application/json
    Authentication-Token:WyIwIiwiY2M2NDA1MTVkYmE5ZTQ5NDEyZGIyYmVkNThkNWJhMGUiXQ.DTivLg.hK1nnOeqWu9BUeY6apcfwSq2u6g
    ```
-4. **Handling Responses**: Handle responses according to the returned status codes and data formats.
+4. **Handling Responses**: Handle responses according to the returned status codes and data formats.	
