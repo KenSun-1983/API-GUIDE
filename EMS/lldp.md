@@ -1,5 +1,3 @@
-
-
 # LLDP
 ## API Information
 Obtain LLDP neighbor information. Through the data returned by this interface, you can acquire the peer device and port information connected to each port of the device.
@@ -26,7 +24,12 @@ In the current version, the string "tiap_ems_north" can be specified arbitrarily
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/ea0d5dbb-c218-45b5-bd1c-e5626cc387f9" />
 
 **API Path**
+
+For 711L:
 https://172.16.61.51/tiap_ems_north/tiap_ems_basic_mgt/v3/lldp_rem
+
+For 711-C-R
+https://172.16.61.51/tiap_ems_north/tiap_ems_basic_mgt/v2/lldp_rem
 
 **Request Protocol**
 HTTP
@@ -49,7 +52,7 @@ GET
 
 **Response Content**:
 
-**Return Result**
+**Return Result V3**
 >Success (200)
 Json
 object
@@ -75,9 +78,7 @@ object
 |code| |Yes|[number]| ||0|
 |msg| |Yes|[string]| ||Operation is Successful|
 
-**Success Example [Mock API]**:
-
-**mock api**: https://result.eolink.com/9EmwBTE13c32db84bc562749eb3d17b83e5c24f2a3e2bb3?uri=https://172.16.61.51/tiap_ems_north/tiap_ems_basic_mgt/v3/lldp_rem&resultType=failure
+***Success Example***:
 ```
 {
     "total": 1,
@@ -98,6 +99,54 @@ object
     }],
     "code": 0,
     "msg": "Operation is Successful"
+}
+```
+
+**Return Result V2**
+>Success (200)
+Json
+object
+
+| Parameter Name  | Description | Required | Type | Data Dictionary | Restriction | Example |
+| :------------ | :------------ | :------------ | :------------ | :------------ | :------------ | :------------ |
+|total| |Yes|[number]| ||1|
+|data| |Yes|[array]| |||
+|data>>item[0]| |Yes|[object]| || |
+|data>>item[0]>>lldpRemCapEnabled| |Yes|[string]| ||Bridge/Switch,Router|
+|data>>item[0]>>lldpRemCapSupported| |Yes|[string]| ||Bridge/Switch,Router|
+|data>>item[0]>>lldpRemChassisId| |Yes|[string]| ||cc:d8:1f:c7:66:b4|
+|data>>item[0]>>lldpRemPortId| |Yes|[string]| ||tengigabitethernet0/27|
+|data>>item[0]>>lldpRemSysName| |Yes|[string]| ||H3S_Maipu|
+|data>>item[0]>>neId| |Yes|[number]| ||116|
+|data>>item[0]>>portName| |Yes|[string]| ||tengigabitethernet1/1/4|
+
+***Success Example***:
+```
+{
+    "total": 2,
+    "data": [
+        {
+            "lldpRemCapEnabled": "Bridge/Switch,Router",
+            "lldpRemCapSupported": "Bridge/Switch,Router",
+            "lldpRemChassisId": "cc:d8:1f:c7:66:b4",
+            "lldpRemPortId": "tengigabitethernet0/27",
+            "lldpRemSysName": "H3S_Maipu",
+            "neId": 116,
+            "portIdentifier": "272900120",
+            "portName": "tengigabitethernet1/1/4"
+        },
+        {
+            "lldpRemCapEnabled": "Bridge/Switch,Router",
+            "lldpRemCapSupported": "Bridge/Switch,Router",
+            "lldpRemChassisId": "18:fd:74:ab:b4:1d",
+            "lldpRemPortId": "ether8",
+            "lldpRemSysName": "MikroTik",
+            "neId": 116,
+            "portIdentifier": "272908344",
+            "portName": "gigaethernet1/2/8"
+        }
+    ],
+    "code": 0
 }
 ```
 
