@@ -2,10 +2,24 @@
 This API is used to get the list of optical amplifiers by network element ID and card ID.
 
 ## Detailed Explanation
-The PowerShell script creates a web session with a specific user - agent and adds multiple cookies to it. Then it makes a POST request to the API endpoint with specified headers and content - type.
+***Open API Interface***
+Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
+In the file, locate the following section and add "/tiap_wdm_north":"127.0.0.1:61600".
+
+In the current version, the string "tiap_wdm_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
+
+```json
+"north": {
+            "/couchdb": "127.0.0.1:5984",
+            "/cloudvpn": "127.0.0.1:60150",
+            "/alarm_north":"127.0.0.1:60030",
+            "/tiap_wdm_north":"127.0.0.1:61600",
+            "/measure_sla_north":"127.0.0.1:61304"
+        }
+```
 
 ## API Path
-`https://172.16.61.51/tiap_ems_wdm_mgt/tiap_ems_wdm_mgt/v1/netconf/optical_amplifier/get_list_by_neid_cardid`
+`https://172.16.61.51/tiap_wdm_north/tiap_ems_wdm_mgt/v1/netconf/optical_amplifier/get_list_by_neid_cardid`
 
 ## Request Protocol
 HTTP
