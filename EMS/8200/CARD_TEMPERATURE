@@ -29,8 +29,15 @@ POST
 
 ### Query Parameters
 None
-
 ### Request Body
+| Parameter Name | Description | Required | Type | Restriction | Example |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `neId` | The ID of the network element | Yes | `number` |  | 404 |
+| `cardFixName` | Fixed Card Name | Yes | `string` |  | LINECARD-1-1 |
+| `depth` | depth | Yes | `number` |  | 7 |
+
+### Request Body Example
+
 ```json
 {"neId":404,"cardFixName":"LINECARD-1-1","depth":7}
 ```
