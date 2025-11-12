@@ -1,0 +1,94 @@
+## API Information
+This API is used to obtain the card snapshot data.
+
+### Detailed Explanation
+The PowerShell script above creates a web request session, sets cookies, and then sends a POST request to the specified API endpoint with specific headers, content type, and body.
+
+### API Path
+`https://172.16.61.51/tiap_ems_wdm_mgt/tiap_ems_wdm_mgt/v1/cardSnapshot/getData`
+
+### Request Protocol
+HTTP
+
+### Request Method
+POST
+
+### Query Parameters
+None
+
+### Request Body
+```json
+{"neId":404,"cardFixName":"LINECARD-1-1","depth":7}
+```
+
+### Response Content
+#### Return Result
+> Success (200)
+Json object
+
+| Parameter Name | Description | Required | Type | Data Dictionary | Restriction | Example |
+| :------------ | :------------ | :------------ | :------------ | :------------ | :------------ | :------------ |
+| total |  | Yes | [number] |  |  | 1 |
+| data |  | Yes | [array] |  |  | [{"actualvendortype": "TQ5D", "adminstate": "ENABLED", ...}] |
+| data>>item[0] |  | Yes | [object] |  |  |  |
+| data>>item[0]>>actualvendortype |  | Yes | [string] |  |  | TQ5D |
+| data>>item[0]>>adminstate |  | Yes | [string] |  |  | ENABLED |
+| data>>item[0]>>description |  | Yes | [string] |  |  | iTN8200-II-TQ5D |
+| data>>item[0]>>empty |  | Yes | [boolean] |  |  | false |
+| data>>item[0]>>firmwareversion |  | Yes | [string] |  |  | #FPGA:1.7#CPLD:5.3 |
+| data>>item[0]>>hardwareversion |  | Yes | [string] |  |  | A.01 |
+| data>>item[0]>>location |  | Yes | [string] |  |  | 1-1 |
+| data>>item[0]>>mfgname |  | Yes | [string] |  |  | RAISECOM |
+| data>>item[0]>>name |  | Yes | [string] |  |  | LINECARD-1-1 |
+| data>>item[0]>>operstatus |  | Yes | [string] |  |  | openconfig-platform-types:ACTIVE |
+| data>>item[0]>>parent |  | Yes | [string] |  |  | CHASSIS-1 |
+| data>>item[0]>>partno |  | Yes | [string] |  |  | 103003038601S23529A0004P |
+| data>>item[0]>>powerAdminMode |  | Yes | [string] |  |  | MANUAL |
+| data>>item[0]>>powerAdminState |  | Yes | [string] |  |  | POWER_ENABLED |
+| data>>item[0]>>ratedpower |  | Yes | [number] |  |  | 50 |
+| data>>item[0]>>removable |  | Yes | [boolean] |  |  | true |
+| data>>item[0]>>serialno |  | Yes | [string] |  |  | 103003038601S23529A0004P |
+| data>>item[0]>>softwareversion |  | Yes | [string] |  |  | 7.2.15 |
+| data>>item[0]>>supportedvendortype |  | Yes | [string] |  |  | UOLA-F22,TFF5255,TWS09OA35,TFF2023,TFF5659,TQ6SB,TQ6SA,TQ5DR,TFF3437,EOA-V25,OTDR,RFA,XT5S,PTME,TFF1619,TWS09\u0028C\u0029,TD5S,TMD9,EOA-F22,OA35,TWS09OA25,OLA35,HS6S,TFF3841,EOA-V35,OLA25,TQ6SF,TWS09OA35E,UOA-V35,OA25,VOA8,TWS09OA35D,HD8S,FRFA,TM5SB,TFF4346,TM5SA,OA25C,TQ6DR,OA25E,OA25G,UOLA-V35,TFF2528,FDU,TQ5D,EOA-V18,TFF4750,PTMW,UOA-F22,TFF2932,EOA-F17,OSP,OP2,OP1,TWS09,TWS09OA25G,EOA-F12,OCM,TWS09OA25E,TWS09OA25D |
+| data>>item[0]>>switchability |  | Yes | [boolean] |  |  | false |
+| data>>item[0]>>temperature |  | Yes | [string] |  |  | 55.0 |
+| data>>item[0]>>type |  | Yes | [string] |  |  | openconfig-platform-types:LINECARD |
+| data>>item[0]>>usedpower |  | Yes | [number] |  |  | 30 |
+| data>>item[0]>>vendortypepreconf |  | Yes | [string] |  |  | TQ5D |
+| code |  | Yes | [number] |  |  | 0 |
+
+#### Success Example
+```json
+{
+    "total": 1,
+    "data": [
+        {
+            "actualvendortype": "TQ5D",
+            "adminstate": "ENABLED",
+            "description": "iTN8200-II-TQ5D",
+            "empty": false,
+            "firmwareversion": "#FPGA:1.7#CPLD:5.3",
+            "hardwareversion": "A.01",
+            "location": "1-1",
+            "mfgname": "RAISECOM",
+            "name": "LINECARD-1-1",
+            "operstatus": "openconfig-platform-types:ACTIVE",
+            "parent": "CHASSIS-1",
+            "partno": "103003038601S23529A0004P",
+            "powerAdminMode": "MANUAL",
+            "powerAdminState": "POWER_ENABLED",
+            "ratedpower": 50,
+            "removable": true,
+            "serialno": "103003038601S23529A0004P",
+            "softwareversion": "7.2.15",
+            "supportedvendortype": "UOLA-F22,TFF5255,TWS09OA35,TFF2023,TFF5659,TQ6SB,TQ6SA,TQ5DR,TFF3437,EOA-V25,OTDR,RFA,XT5S,PTME,TFF1619,TWS09\u0028C\u0029,TD5S,TMD9,EOA-F22,OA35,TWS09OA25,OLA35,HS6S,TFF3841,EOA-V35,OLA25,TQ6SF,TWS09OA35E,UOA-V35,OA25,VOA8,TWS09OA35D,HD8S,FRFA,TM5SB,TFF4346,TM5SA,OA25C,TQ6DR,OA25E,OA25G,UOLA-V35,TFF2528,FDU,TQ5D,EOA-V18,TFF4750,PTMW,UOA-F22,TFF2932,EOA-F17,OSP,OP2,OP1,TWS09,TWS09OA25G,EOA-F12,OCM,TWS09OA25E,TWS09OA25D",
+            "switchability": false,
+            "temperature": "55.0",
+            "type": "openconfig-platform-types:LINECARD",
+            "usedpower": 30,
+            "vendortypepreconf": "TQ5D"
+        }
+    ],
+    "code": 0
+}
+```
