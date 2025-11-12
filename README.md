@@ -63,6 +63,7 @@ pm2 restart www
 ## API Index
 - [Token API](getToken.md)
 - [LLDP API](/EMS/lldp.md)
+- [8200 API](/EMS/8200/)
 
 Please click the links above for more information.
 
