@@ -27,70 +27,88 @@ HTTP
 ### Request Method
 POST
 
-### Request Body
+## Request Body
 | Parameter Name | Description | Required | Type | Restriction | Example |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| --- | --- | --- | --- | --- | --- |
 | `neId` | The ID of the network element | Yes | `number` |  | 404 |
-| `fixedNetypeId` | Fixed network type ID | Yes | `number` |  | 20002 |
-| `metricDetailList` | List of metric details | Yes | `array` |  | `[{"metricPairId":107}]` |
-| `cardId` | Identifier for the card | Yes | `string` |  | `/ne=404/shelf=1/slot=1/card=1.1` |
-### Request Body Example
+| `fixedNetypeId` | The fixed network type ID | Yes | `number` |  | 20002 |
+| `metricDetailList` | A list of metric pair IDs | Yes | `array` |  | `[{"metricPairId":107},{"metricPairId":109},{"metricPairId":110}]` |
+| `metricDetailList>>item[0]>>metricPairId` | The ID of a metric pair | Yes | `number` |  | 107 |
+| `cardId` | The ID of the card | Yes | `string` |  | `/ne=404/shelf=1/slot=1/card=1.1` |
+
+## Request Body Example
 ```json
-{
-    "neId": 404,
-    "fixedNetypeId": 20002,
-    "metricDetailList": [
-        {
-            "metricPairId": 107
-        }
-    ],
-    "cardId": "/ne=404/shelf=1/slot=1/card=1.1"
-}
+{"neId":404,"fixedNetypeId":20002,"metricDetailList":[{"metricPairId":107},{"metricPairId":109},{"metricPairId":110}],"cardId":"/ne=404/shelf=1/slot=1/card=1.1"}
 ```
-### Response Content
-**Return Result**
+
+## Response Content
+### Return Result
 > Success (200)
-JSON object
+Json object
 
 | Parameter Name | Description | Required | Type | Data Dictionary | Restriction | Example |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `total` | Total number of data items | Yes | `number` |  |  | 4 |
-| `data` | Array of performance data | Yes | `array` |  |  | `[{"avg":"0.0","collectTime":"2025-11-12 16:00:02","id":33,"max":"0.0","metricName":"Osnr\u0028max/min/avg\u0029","min":"0.0","rsName":"OTUC2-1-1-L1"},{"collectTime":"2025-11-12 16:00:02","id":34,"metricName":"Osnr\u0028max/min/avg\u0029","rsName":"OTUC2-1-1-L2"},{"avg":"0.0","collectTime":"2025-11-12 16:00:02","id":35,"max":"0.0","metricName":"Osnr\u0028max/min/avg\u0029","min":"0.0","rsName":"OCH-1-1-L1"},{"avg":"0.0","collectTime":"2025-11-12 16:00:02","id":36,"max":"0.0","metricName":"Osnr\u0028max/min/avg\u0029","min":"0.0","rsName":"OCH-1-1-L2"}]` |
-| `data>>item[0]` | First item in the data array | Yes | `object` |  |  |  |
-| `data>>item[0]>>avg` | Average value of the metric | No | `string` |  |  | "0.0" |
-| `data>>item[0]>>collectTime` | Collection time of the performance data | Yes | `string` |  |  | "2025-11-12 16:00:02" |
-| `data>>item[0]>>id` | Unique identifier of the performance data | Yes | `number` |  |  | 33 |
-| `data>>item[0]>>max` | Maximum value of the metric | No | `string` |  |  | "0.0" |
-| `data>>item[0]>>metricName` | Name of the metric | Yes | `string` |  |  | "Osnr(max/min/avg)" |
-| `data>>item[0]>>min` | Minimum value of the metric | No | `string` |  |  | "0.0" |
-| `data>>item[0]>>rsName` | Resource name | Yes | `string` |  |  | "OTUC2-1-1-L1" |
-| `code` | Operation result code | Yes | `number` |  |  | 0 |
-| `msg` | Operation result message | Yes | `string` |  |  | "Operation is Successful" |
+| --- | --- | --- | --- | --- | --- | --- |
+| `total` | The total number of performance data items | Yes | `number` |  |  | 8 |
+| `data` | The performance data list | Yes | `array` |  |  |  |
+| `data>>item` | The performance data item | Yes | `object` |  |  |  |
+| `data>>item>>avg` | The average value of the metric (if applicable) | No | `string` |  |  | "0.0" |
+| `data>>item>>collectTime` | The collection time of the metric | Yes | `string` |  |  | "2025-11-12 18:00:02" |
+| `data>>item>>id` | The ID of the performance data record | Yes | `number` |  |  | 144 |
+| `data>>item>>max` | The maximum value of the metric (if applicable) | No | `string` |  |  | "0.0" |
+| `data>>item>>metricName` | The name of the metric | Yes | `string` |  |  | "Osnr\u0028max/min/avg\u0029" |
+| `data>>item>>min` | The minimum value of the metric (if applicable) | No | `string` |  |  | "0.0" |
+| `data>>item>>rsName` | The resource name | Yes | `string` |  |  | "OTUC2-1-1-L1" |
+| `code` | The status code of the operation | Yes | `number` |  |  | 0 |
+| `msg` | A message indicating the result of the operation | Yes | `string` |  |  | "Operation is Successful" |
 
 ### Success Example
 ```json
 {
-    "total": 4,
+    "total": 8,
     "data": [
         {
             "avg": "0.0",
-            "collectTime": "2025-11-12 16:00:02",
-            "id": 33,
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 144,
             "max": "0.0",
             "metricName": "Osnr\u0028max/min/avg\u0029",
             "min": "0.0",
             "rsName": "OTUC2-1-1-L1"
         },
         {
-            "collectTime": "2025-11-12 16:00:02",
-            "id": 34,
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 145,
+            "metricName": "Pre Fec Ber\u0028max/min/avg\u0029",
+            "rsName": "OTUC2-1-1-L1"
+        },
+        {
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 146,
+            "metricName": "Post Fec Ber\u0028max/min/avg\u0029",
+            "rsName": "OTUC2-1-1-L1"
+        },
+        {
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 147,
             "metricName": "Osnr\u0028max/min/avg\u0029",
             "rsName": "OTUC2-1-1-L2"
         },
         {
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 148,
+            "metricName": "Pre Fec Ber\u0028max/min/avg\u0029",
+            "rsName": "OTUC2-1-1-L2"
+        },
+        {
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 149,
+            "metricName": "Post Fec Ber\u0028max/min/avg\u0029",
+            "rsName": "OTUC2-1-1-L2"
+        },
+        {
             "avg": "0.0",
-            "collectTime": "2025-11-12 16:00:02",
-            "id": 35,
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 150,
             "max": "0.0",
             "metricName": "Osnr\u0028max/min/avg\u0029",
             "min": "0.0",
@@ -98,8 +116,8 @@ JSON object
         },
         {
             "avg": "0.0",
-            "collectTime": "2025-11-12 16:00:02",
-            "id": 36,
+            "collectTime": "2025-11-12 18:00:02",
+            "id": 151,
             "max": "0.0",
             "metricName": "Osnr\u0028max/min/avg\u0029",
             "min": "0.0",
