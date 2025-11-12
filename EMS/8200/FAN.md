@@ -49,14 +49,10 @@ Json object
 | :------------ | :------------ | :------------ | :------------ | :------------ | :------------ | :------------ |
 | total | The total number of items | Yes | `number` |  |  | 0 |
 | data | The list of fan information | Yes | `array` |  |  |  |
-| data>>item[0] | The first fan information object | Yes | `object` |  |  |  |
-| data>>item[0]>>fanId | The ID of the fan | Yes | `string` |  |  | "1" |
-| data>>item[0]>>fanSpeed | The speed of the fan | Yes | `string` |  |  | "3240" |
-| data>>item[0]>>fanWorkingStatus | The working status of the fan | Yes | `string` |  |  | "normal" |
-| data>>item[1] | The second fan information object | Yes | `object` |  |  |  |
-| data>>item[1]>>fanId | The ID of the fan | Yes | `string` |  |  | "2" |
-| data>>item[1]>>fanSpeed | The speed of the fan | Yes | `string` |  |  | "3780" |
-| data>>item[1]>>fanWorkingStatus | The working status of the fan | Yes | `string` |  |  | "normal" |
+| data>>item | The first fan information object | Yes | `object` |  |  |  |
+| data>>item>>fanId | The ID of the fan | Yes | `string` |  |  | "1" |
+| data>>item>>fanSpeed | The speed of the fan | Yes | `string` |  |  | "3240" |
+| data>>item>>fanWorkingStatus | The working status of the fan | Yes | `string` |  |  | "normal" |
 | code | The status code of the response | Yes | `number` |  |  | 0 |
 
 #### Success Example
