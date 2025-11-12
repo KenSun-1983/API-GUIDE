@@ -37,7 +37,7 @@ Add the specific content that needs to be added for the API to this section, For
 ```
 Then restart the web app module.
 ```bash
-npm restart www
+pm2 restart www
 ```
 ## Step 2:Use REST API
 
