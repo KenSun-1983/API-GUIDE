@@ -41,6 +41,16 @@ POST
     "limit": 50
 }
 ```
+**Request Parameters**:
+| Parameter Name | Description | Required | Type | Restriction | Example |
+| :------------ | :------------ | :------------ | :------------ | :------------ | :------------ |
+|neId| |Yes|[string]||463|
+|cardId| |Yes|[string]||/ne=254/shelf=1/slot=7/card=1.1|
+|page| |Yes|[string]||1|
+|start| |Yes|[string]||0|
+|limit| |Yes|[string]||100|
+|yangContainer| |Yes|[string]||components|
+|yangModule| |Yes|[string]||openconfig-platform|
 
 **Response Content**:
 
