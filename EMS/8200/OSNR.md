@@ -2,11 +2,24 @@
 Query performance data. Through this API, you can obtain performance - related information based on specified parameters.
 
 ### Detailed Explanation
-- **Open API Interface**: There is no information about the specific steps for opening the API interface in the given content. You may need to refer to the system's official documentation or relevant configuration files.
-- **How to get neId**: No information is provided on how to obtain the `neId` in the given content.
+***Open API Interface***
+Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
+In the file, locate the following section and add "/tiap_wdm_north":"127.0.0.1:61600".
+
+In the current version, the string "tiap_wdm_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
+
+```json
+"north": {
+            "/couchdb": "127.0.0.1:5984",
+            "/cloudvpn": "127.0.0.1:60150",
+            "/alarm_north":"127.0.0.1:60030",
+            "/tiap_wdm_north":"127.0.0.1:61600",
+            "/measure_sla_north":"127.0.0.1:61304"
+        }
+```
 
 ### API Path
-`https://172.16.61.51/tiap_ems_wdm_mgt/tiap_ems_wdm_mgt/v1/performanceQuery/query_performance`
+`https://172.16.61.51/tiap_wdm_north/tiap_ems_wdm_mgt/v1/performanceQuery/query_performance`
 
 ### Request Protocol
 HTTP
