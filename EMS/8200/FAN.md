@@ -2,21 +2,29 @@
 This API is used to obtain the fan list information.
 
 ### Detailed Explanation
-The PowerShell script configures a web request session with specific cookies and headers, then sends a POST request to the specified API endpoint to get the fan list information.
+***Open API Interface***
+Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
+In the file, locate the following section and add "/tiap_wdm_north":"127.0.0.1:61600".
 
+In the current version, the string "tiap_wdm_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
+
+```json
+"north": {
+            "/couchdb": "127.0.0.1:5984",
+            "/cloudvpn": "127.0.0.1:60150",
+            "/alarm_north":"127.0.0.1:60030",
+            "/tiap_wdm_north":"127.0.0.1:61600",
+            "/measure_sla_north":"127.0.0.1:61304"
+        }
+```
 ### API Path
-`https://172.16.61.51/tiap_ems_wdm_mgt/tiap_ems_wdm_mgt/v1/fan_config/fan_list_info?_dc=1762939398501`
+`https://172.16.61.51/tiap_wdm_north/tiap_ems_wdm_mgt/v1/fan_config/fan_list_info?_dc=1762939398501`
 
 ### Request Protocol
 HTTP
 
 ### Request Method
 POST
-
-### Query Parameters
-| Parameter Name | Description | Required | Type | Restriction | Example |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `_dc` | A timestamp-like parameter, possibly used for cache busting | Yes | `number` |  | 1762939398501 |
 
 ### Request Body
 | Parameter Name | Description | Required | Type | Restriction | Example |
