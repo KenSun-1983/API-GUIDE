@@ -27,14 +27,26 @@ HTTP
 ### Request Method
 POST
 
-### Query Parameters
+### Request Body
 | Parameter Name | Description | Required | Type | Restriction | Example |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `neId` | The ID of the network element | Yes | `number` |  | 404 |
 | `fixedNetypeId` | Fixed network type ID | Yes | `number` |  | 20002 |
 | `metricDetailList` | List of metric details | Yes | `array` |  | `[{"metricPairId":107}]` |
 | `cardId` | Identifier for the card | Yes | `string` |  | `/ne=404/shelf=1/slot=1/card=1.1` |
-
+### Request Body Example
+```json
+{
+    "neId": 404,
+    "fixedNetypeId": 20002,
+    "metricDetailList": [
+        {
+            "metricPairId": 107
+        }
+    ],
+    "cardId": "/ne=404/shelf=1/slot=1/card=1.1"
+}
+```
 ### Response Content
 **Return Result**
 > Success (200)
