@@ -2,6 +2,8 @@
 
 Welcome to our API documentation! This API provides a series of interfaces for developers to use. 
 
+AFTER RCView 3.2.10，Do Not Need “Step 1:Enabling REST API Functionality”.
+
 # Overall Introduction
 
 RCView adopts a B/S (Browser/Server) architecture. All interfaces have corresponding REST API endpoints on the backend, allowing users to retrieve resource information, query alarm information, and push configurations by calling these APIs.
