@@ -20,7 +20,7 @@ In the current version, the string "tiap_wdm_north" can be specified arbitrarily
 ```
 
 ## API Path
-`https://172.16.1.248/inventory/res_ne/select/page_suffix`
+`https://172.16.1.248/nortn_inventory/rest/inventory/res_ne/select/page_suffix`
 
 ## Request Protocol
 HTTP
