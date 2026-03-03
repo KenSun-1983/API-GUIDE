@@ -28,6 +28,9 @@ HTTP
 
 ## Request Method
 GET
+## Request Header
+
+The header must contain user and Authentication-Token, where the value of user must be the same user who requested the token.
 
 ## Query Parameters
 | Parameter Name | Description | Required | Type | Restriction | Example |
