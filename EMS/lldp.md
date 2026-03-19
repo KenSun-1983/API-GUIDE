@@ -4,21 +4,6 @@ Obtain LLDP neighbor information. Through the data returned by this interface, y
 
 **Detailed Explanation**:
 
-***Open API Interface***
-Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
-In the file, locate the following section and add "/tiap_ems_north":"127.0.0.1:61308".
-
-In the current version, the string "tiap_ems_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
-
-```json
-"north": {
-            "/couchdb": "127.0.0.1:5984",
-            "/cloudvpn": "127.0.0.1:60150",
-            "/alarm_north":"127.0.0.1:60030",
-            "/tiap_ems_north":"127.0.0.1:61308",
-            "/measure_sla_north":"127.0.0.1:61304"
-        }
-```
 *** How to get neId***
 
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/ea0d5dbb-c218-45b5-bd1c-e5626cc387f9" />
