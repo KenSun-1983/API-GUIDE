@@ -4,7 +4,7 @@
 Query optical transceiver (optical module) information for a specific NE and card
 
 ## API Path
-`http://XX.XX.XX.XX/tiap_ems_basic_mgt/tiap_ems_basic_mgt/v20/optical_transceiver`
+`http://XX.XX.XX.XX/tiap_ems_north/tiap_ems_basic_mgt/v20/optical_transceiver`
 
 ## Request Protocol
 HTTP

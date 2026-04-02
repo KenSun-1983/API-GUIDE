@@ -4,7 +4,7 @@
 Query the rate limit configuration of Port + VLAN
 
 ## API Path
-`http://XX.XX.XX.XX:60040/tiap_ems_north/v1/bandwidth_limit/port_vlan`
+`http://XX.XX.XX.XX/tiap_ems_north/tiap_ems_basic_mgt/v20/port_rate_limit`
 
 ## Request Protocol
 HTTP
