@@ -16,20 +16,21 @@ GET
 | Parameter Name | Description | Required | Type | Restriction | Example |
 | --- | --- | --- | --- | --- | --- |
 | `neId` | Network Element ID | Yes | `number` | | 30 |
-| `cardId` | Card ID (URL encoded) | Yes | `string` | Format: /ne={neId}/shelf={shelf}/slot={slot}/card={card} | `%2Fne%3D30%2Fshelf%3D1%2Fslot%3D11%2Fcard%3D1.1` |
+| `cardId` | Card ID | Yes | `string` | Format: /ne={neId}/shelf={shelf}/slot={slot}/card={card} (URL encoded) | `/ne=30/shelf=1/slot=11/card=1.1` |
 | `page` | Page number | No | `number` | | 1 |
 | `start` | Starting row number | No | `number` | | 0 |
 | `limit` | Maximum number of rows returned | No | `number` | | 15 |
 
 ### Request Example
 ```
-https://172.16.1.248/tiap_ems_basic_mgt/tiap_ems_basic_mgt/v20/optical_transceiver?neId=30&cardId=%2Fne%3D30%2Fshelf%3D1%2Fslot%3D11%2Fcard%3D1.1&page=1&start=0&limit=15
+https://172.16.1.248/tiap_ems_north/tiap_ems_basic_mgt/v20/optical_transceiver?neId=30&cardId=/ne=30/shelf=1/slot=11/card=1.1&page=1&start=0&limit=15
 ```
 
-**Decoded cardId:**
-```
-/ne=30/shelf=1/slot=11/card=1.1
-```
+**Note:** The `cardId` parameter value should be URL-encoded in actual requests:
+- Original: `/ne=30/shelf=1/slot=11/card=1.1`
+- URL Encoded: `%2Fne%3D30%2Fshelf%3D1%2Fslot%3D11%2Fcard%3D1.1`
+
+In most HTTP clients and browsers, the URL encoding will be handled automatically.
 
 ## Response Content
 ### Return Result
