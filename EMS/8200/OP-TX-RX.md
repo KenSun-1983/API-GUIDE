@@ -1,22 +1,6 @@
 ## API Information
 This API is used to obtain port information by port name and network element ID.
 
-### Detailed Explanation
-***Open API Interface***
-Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
-In the file, locate the following section and add "/tiap_wdm_north":"127.0.0.1:61600".
-
-In the current version, the string "tiap_wdm_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
-
-```json
-"north": {
-            "/couchdb": "127.0.0.1:5984",
-            "/cloudvpn": "127.0.0.1:60150",
-            "/alarm_north":"127.0.0.1:60030",
-            "/tiap_wdm_north":"127.0.0.1:61600",
-            "/measure_sla_north":"127.0.0.1:61304"
-        }
-```
 
 ### API Path
 `https://172.16.61.51/tiap_wdm_north/tiap_ems_wdm_mgt/v1/netconf/port/get_port_by_name`

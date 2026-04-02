@@ -1,23 +1,6 @@
 # API Information
 This API is used to get the list of NE
 
-## Detailed Explanation
-***Open API Interface***
-Log in to the server where RCView is installed and navigate to /comp/service/webapp/config/default.json in the installation directory.
-In the file, locate the following section and add ""/nortn inventory":"127.0.0.1:3000".
-
-In the current version, the string "tiap_wdm_north" can be specified arbitrarily, but it cannot be the same as any existing string. If you use another string, simply use your defined string in the API Path.
-
-```json
-        "north": {
-            "/couchdb": "127.0.0.1:5984",
-            "/cloudvpn": "127.0.0.1:60150",
-            "/alarm_north":"127.0.0.1:60030",
-            "/tiap_ems_north":"127.0.0.1:61308",
-            "/nortn inventory":"127.0.0.1:3000",
-            "/measure_sla_north":"127.0.0.1:61304"
-        },
-```
 
 ## API Path
 `https://172.16.1.248/nortn_inventory/rest/inventory/res_ne/select/page_suffix`
